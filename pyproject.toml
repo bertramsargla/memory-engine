@@ -1,0 +1,24 @@
+[build-system]
+requires = ["setuptools>=69"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "memory-engine"
+version = "0.3.0"
+description = "Local, evidence-first personal memory: encrypted storage, organising layers and cited retrieval."
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "cryptography>=49.0.0",
+    "sqlcipher3>=0.6.2",
+    "numpy>=2.1",
+    "tzlocal>=5.4",
+    "tzdata",
+]
+
+[project.optional-dependencies]
+embeddings = ["onnxruntime>=1.29", "tokenizers>=0.23"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+include = ["memory_engine*"]
